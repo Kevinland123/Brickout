@@ -20,7 +20,7 @@ public class Game extends SimpleApp {
 	public int pscore = 0;
 	public int page = 1;
 	public int death = 1;
-	public int distance = 10;
+	public int distance = 5;
 
 	public boolean add1 = false;
 	public boolean add2 = false;
@@ -124,11 +124,11 @@ public class Game extends SimpleApp {
 			ball.setvy(-ball.getvy());
 
 			if (ball.getx() > (p.getX() + p.getWidth() / 2)) {
-				ball.setvx(Math.abs(ball.getvx()));
+				//ball.setvx(Math.abs(ball.getvx()));
 			}
 
 			if (ball.getx() < (p.getX() + p.getWidth() / 2)) {
-				ball.setvx(Math.abs(ball.getvx()) * -1);
+				//ball.setvx(Math.abs(ball.getvx()) * -1);
 			}
 		}
 
@@ -244,10 +244,10 @@ public class Game extends SimpleApp {
 
 				if (key.getCode() == KeyCode.DIGIT2 && cheat2 == false) {
 					cheat2 = true;
-					distance = 60;
+					distance = 10;
 				} else if (key.getCode() == KeyCode.DIGIT2 && cheat2 == true) {
 					cheat2 = false;
-					distance = 30;
+					distance = 5;
 				}
 
 				if (key.getCode() == KeyCode.DIGIT3 && cheat3 == false) {
