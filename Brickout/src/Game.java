@@ -20,11 +20,14 @@ public class Game extends SimpleApp {
 	public int pscore = 0;
 	public int page = 1;
 	public int death = 1;
-	public int distance = 30;
+	public int distance = 10;
 
 	public boolean add1 = false;
 	public boolean add2 = false;
 	public boolean add3 = false;
+	
+	public boolean left = false;
+	public boolean right = false;
 
 	public boolean cheat = false;
 	public boolean cheatcode = false;
@@ -101,6 +104,15 @@ public class Game extends SimpleApp {
 	}
 
 	public void mechanics() {
+		// Moving paddles
+		if (left == true) {
+			p.left(distance);
+		}
+		
+		if (right == true) {
+			p.right(distance);
+		}
+		
 		// Death
 		if (ball.gety() > getHeight() - spikes.getHeight() / 2 && cheat1 == false) {
 			page = 2;
@@ -208,11 +220,13 @@ public class Game extends SimpleApp {
 	public void onKeyPressed(KeyEvent key) {
 		if (page == 1 || page == 2) {
 			if (key.getCode() == KeyCode.A) {
-				p.setX(p.getX() - distance);
+				left = true;
+				right = false;
 			}
 
 			if (key.getCode() == KeyCode.D) {
-				p.setX(p.getX() + distance);
+				right = true;
+				left = false;
 			}
 
 			if (key.getCode() == KeyCode.SPACE) {

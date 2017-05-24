@@ -19,6 +19,14 @@ public class Paddle {
 	public void draw(GraphicsContext gc) {
 		gc.drawImage(i, x, y, width, height);
 	}
+	
+	public void left(int d) {
+		this.x = this.x - d;
+	}
+	
+	public void right(int d) {
+		this.x = this.x + d;
+	}
 
 	public double getX() {
 		return x;
