@@ -216,17 +216,24 @@ public class Game extends SimpleApp {
 			page = 1;
 		}
 	}
+	
+	public void onKeyReleased(KeyEvent key) {
+		if (page == 1 || page == 2) {
+			left = false;
+			right = false;
+		}
+	}
 
 	public void onKeyPressed(KeyEvent key) {
 		if (page == 1 || page == 2) {
 			if (key.getCode() == KeyCode.A) {
 				left = true;
-				right = false;
+				//right = false;
 			}
 
 			if (key.getCode() == KeyCode.D) {
 				right = true;
-				left = false;
+				//left = false;
 			}
 
 			if (key.getCode() == KeyCode.SPACE) {
